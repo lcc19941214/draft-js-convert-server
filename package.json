@@ -3,13 +3,17 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "start": "node bin/www",
-    "dev": "./node_modules/.bin/nodemon bin/www",
+    "start": "PORT=3001 node bin/www",
+    "dev": "PORT=3001 ./node_modules/.bin/nodemon bin/www",
     "prd": "pm2 start bin/www",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {
     "debug": "^2.6.3",
+    "draft-convert": "^2.0.0",
+    "draft-js": "^0.10.4",
+    "immutable": "^3.8.2",
+    "jsdom": "^11.3.0",
     "koa": "^2.2.0",
     "koa-bodyparser": "^3.2.0",
     "koa-convert": "^1.2.0",
@@ -19,7 +23,9 @@
     "koa-router": "^7.1.1",
     "koa-static": "^3.0.0",
     "koa-views": "^5.2.1",
-    "pug": "^2.0.0-rc.1"
+    "pug": "^2.0.0-rc.1",
+    "react": "^16.1.0",
+    "react-dom": "^16.1.0"
   },
   "devDependencies": {
     "nodemon": "^1.8.1"
