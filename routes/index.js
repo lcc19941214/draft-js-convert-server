@@ -1,19 +1,33 @@
-const router = require('koa-router')()
+const router = require('koa-router')();
+const { convertState, convertHTML } = require('../scripts/convert');
 
 router.get('/', async (ctx, next) => {
   await ctx.render('index', {
     title: 'Hello Koa 2!'
-  })
-})
+  });
+});
 
-router.get('/string', async (ctx, next) => {
-  ctx.body = 'koa2 string'
-})
-
-router.get('/json', async (ctx, next) => {
-  ctx.body = {
-    title: 'koa2 json'
+/**
+ * request params
+ * content
+ */
+router.post('/convert', async (ctx, next) => {
+  const reqBody = ctx.request.body;
+  const { content } = reqBody;
+  try {
+    const rst = {
+      content: convertHTML(content),
+      contentState: convertState(content)
+    };
+    ctx.body = {
+      ...rst,
+      success: true
+    };
+  } catch (error) {
+    ctx.body = {
+      success: false
+    };
   }
-})
+});
 
-module.exports = router
+module.exports = router;
