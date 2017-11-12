@@ -1,3 +1,11 @@
 {
-  "name": "${candidate_name}"
+  "name": "${candidate_name}",
+  "talent_name": "${candidate_name}",
+  "position_name": "${acq_name}",
+  "time": "${interview_time}",
+  "hr_name": "${interview_hr_name}",
+  "hr_mobile": "${interview_hr_mobile}",
+  "location": "${interview_location}",
+  "position": "${acq_name}",
+  "send_date": "${cur_date}"
 }

@@ -16,7 +16,7 @@ HTMLAnchorElement = require('jsdom/lib/jsdom/living/nodes/HTMLAnchorElement-impl
   .implementation;
 
 function matchField(text) {
-  return text.replace(FIELD_PTN, (match, name, offset) => {
+  return text.replace(FIELD_PTN, (match, offset, name) => {
     const oldField = match.slice(2, -1);
     if (CONVERT_DATA[oldField]) return CONVERT_DATA[oldField];
     return match;
@@ -26,7 +26,7 @@ function matchField(text) {
 const convertConfig = {
   textToEntity: (text, createEntity) => {
     const result = [];
-    text.replace(FIELD_PTN, (match, name, offset) => {
+    text.replace(FIELD_PTN, (match, offset, group) => {
       const newField = match.slice(2, -1);
       if (FIELD_DATA[newField]) {
         const { locale_key: localeKey } = FIELD_DATA[newField];
@@ -56,7 +56,8 @@ function convertState(content) {
 }
 
 function convertHTML(content) {
-  return matchField(content);
+  const html = matchField(content);
+  return `<div style="color: #3b3e44; font-size: 14px; line-height: 1.8">${html}</div>`;
 }
 
 module.exports = {

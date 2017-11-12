@@ -24,7 +24,9 @@ router.post('/convert', async (ctx, next) => {
       success: true
     };
   } catch (error) {
+    console.log(error);
     ctx.body = {
+      err: error.toString(),
       success: false
     };
   }

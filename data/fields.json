@@ -1,5 +1,23 @@
 {
   "candidate_name": {
-    "locale_key": "People.last.haha"
+    "locale_key": "People.mailTemplate.fields.candidate.name"
+  },
+  "interview_time": {
+    "locale_key": "People.mailTemplate.fields.interview.time"
+  },
+  "interview_hr_name": {
+    "locale_key": "People.mailTemplate.fields.interview.hrName"
+  },
+  "interview_hr_mobile": {
+    "locale_key": "People.mailTemplate.fields.interview.hrMobile"
+  },
+  "interview_location": {
+    "locale_key": "People.mailTemplate.fields.interview.location"
+  },
+  "acq_name": {
+    "locale_key": "People.mailTemplate.fields.position.name"
+  },
+  "cur_date": {
+    "locale_key": "People.mailTemplate.fields.common.currentDate"
   }
 }
