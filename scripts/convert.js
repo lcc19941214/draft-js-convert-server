@@ -49,7 +49,8 @@ const convertConfig = {
 };
 
 function convertState(content) {
-  const _content = matchField(content);
+  let _content = matchField(content);
+  _content = _content.replace(/\n/g, '<br>');
   const contentState = convertFromHTML(convertConfig)(_content);
   const r = convertToRaw(contentState);
   return r;
